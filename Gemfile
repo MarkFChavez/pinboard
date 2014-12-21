@@ -7,6 +7,7 @@ group :test, :development do
 end
 
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'haml'
 gem 'haml-rails'
 
