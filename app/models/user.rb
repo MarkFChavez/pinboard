@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :provider, :uid, presence: true
 
+  has_many :pins, dependent: :destroy
+
   def self.find_or_create_by_omniauth auth_params
     user = self.find_or_create_by(provider: auth_params.provider, uid: auth_params.uid) do |user|
       user.email = auth_params.info.email

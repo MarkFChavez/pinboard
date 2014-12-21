@@ -13,6 +13,8 @@ gem 'autoprefixer-rails'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'paperclip'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 
