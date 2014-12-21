@@ -5,6 +5,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    .jumbotron
+      .container
+        .row
+          .col-lg-12
+            %h1 
+              Pinboa.rd
+              = link_to "Login with Facebook", "/auth/facebook", class: "btn btn-lg btn-primary"
+
     = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
