@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
