@@ -5,14 +5,32 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .jumbotron
+    %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
       .container
-        .row
-          .col-lg-12
-            %h1 
-              Pinboa.rd
-              = link_to "Login with Facebook", "/auth/facebook", class: "btn btn-lg btn-primary"
+        .navbar-header
+          %button.navbar-toggle.collapsed{ "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1", type: "button" }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+              
+          = link_to "Pinboa.rd", root_path, class: "navbar-brand"
 
-    = yield
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right
+            - if signed_in?
+              %li
+                = link_to current_user.full_name, "#"
+              %li
+                = link_to "Logout", logout_path, method: :delete
+
+            - else
+              %li
+                = link_to "Login with Facebook", "/auth/facebook"
+
+    .container.top70
+      .row
+        .col-lg-12
+          = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
