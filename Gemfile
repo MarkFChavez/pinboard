@@ -6,6 +6,10 @@ group :test, :development do
   gem 'factory_girl_rails'
 end
 
+gem 'bootstrap-sass'
+gem 'haml'
+gem 'haml-rails'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 
